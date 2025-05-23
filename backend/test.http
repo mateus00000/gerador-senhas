@@ -1,0 +1,37 @@
+### Register a new user
+POST http://localhost:3000/api/signup
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "password": "password123",
+  "confirmPassword": "password123"
+}
+
+### Login with existing user
+POST http://localhost:3000/api/signin
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### Create a new password item
+POST http://localhost:3000/api/item
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "name": "Gmail",
+  "password": "myGmailPassword123"
+}
+
+### Get all password items
+GET http://localhost:3000/api/items
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### Delete a password item
+DELETE http://localhost:3000/api/item/ITEM_ID_HERE
+Authorization: Bearer YOUR_TOKEN_HERE 
