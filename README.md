@@ -99,7 +99,7 @@ gerador-de-senhas/
 
 ## Autor
 
-Desenvolvido por **MarcusMix** com o auxílio de ferramentas de IA de ponta.
+Desenvolvido por **MateusC000** com o auxílio de ferramentas de IA de ponta.
 
 ---
 
