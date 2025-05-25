@@ -1,7 +1,5 @@
 # Gerador de Senhas Mobile
 
-[![MarcusMix](https://img.shields.io/badge/Desenvolvido%20por-MarcusMix-brightgreen)](https://github.com/MarcusMix) [![CursorIDE](https://img.shields.io/badge/Feito%20com-CursorIDE-blue)](https://cursor.sh/) [![GeminiPro](https://img.shields.io/badge/Potencializado%20por-Gemini%20PRO-purple)](https://deepmind.google/technologies/gemini/)
-
 Um aplicativo mobile simples e elegante para gerar senhas seguras, desenvolvido com React Native, Expo, e o poder da IA com Gemini PRO através do CursorIDE.
 
 
