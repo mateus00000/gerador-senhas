@@ -133,11 +133,11 @@ const SavedPasswordsScreen = ({ navigation }) => {
       
       <View style={styles.passwordActions}>
         <TouchableOpacity onPress={() => togglePasswordVisibility(item.id)} style={styles.actionButton}>
-          <FontAwesome5 name={visiblePasswords[item.id] ? "eye-slash" : "eye"} size={18} color="#00ACC1" />
+          <FontAwesome5 name={visiblePasswords[item.id] ? "eye-slash" : "eye"} size={18} color="#000000" />
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => copyToClipboard(item.password)} style={styles.actionButton}>
-          <FontAwesome5 name="copy" size={18} color="#1A237E" />
+          <FontAwesome5 name="copy" size={18} color="#000000" />
         </TouchableOpacity>
         
         <TouchableOpacity onPress={() => handleDelete(item.id)} style={styles.actionButton}>
@@ -164,7 +164,7 @@ const SavedPasswordsScreen = ({ navigation }) => {
         
         {loading ? (
           <View style={styles.loadingContainer}>
-            <ActivityIndicator size="large" color="#1A237E" />
+            <ActivityIndicator size="large" color="#000000" />
             <Text style={styles.loadingText}>Carregando senhas...</Text>
           </View>
         ) : savedPasswords.length > 0 ? (
@@ -224,7 +224,7 @@ const SavedPasswordsScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#4f4e4e',
   },
   header: {
     flexDirection: 'row',
@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
   },
   backButton: {
     fontSize: 24,
-    color: '#1A237E',
+    color: '#000000',
     fontWeight: '600',
   },
   headerTitle: {
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#1A237E',
+    color: '#FFFFFF',
     textAlign: 'center',
     marginBottom: 20,
     marginTop: 10,
@@ -304,7 +304,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   button: {
-    backgroundColor: '#00ACC1',
+    backgroundColor: '#000000',
     borderRadius: 8,
     paddingVertical: 14,
     paddingHorizontal: 30,

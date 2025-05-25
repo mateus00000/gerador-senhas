@@ -35,7 +35,7 @@ const Routes = () => {
   if (loading || !state.isReady) {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#1A237E" />
+        <ActivityIndicator size="large" color="#000000" />
       </View>
     );
   }

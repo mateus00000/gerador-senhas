@@ -21,7 +21,7 @@ const PasswordHistoryItem = ({
           <FontAwesome5 
             name={isVisible ? "eye-slash" : "eye"} 
             size={16} 
-            color="#00ACC1"
+            color="#000000"
             style={styles.icon} 
           />
         </TouchableOpacity>
@@ -32,7 +32,7 @@ const PasswordHistoryItem = ({
           <FontAwesome5 
             name="copy" 
             size={16} 
-            color="#1A237E"
+            color="#000000"
             style={styles.copyIcon} 
           />
         </TouchableOpacity>

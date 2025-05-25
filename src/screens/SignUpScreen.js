@@ -192,9 +192,12 @@ const SignupScreen = ({ navigation }) => {
           />
 
           <TouchableOpacity
-            style={styles.button}
+            style={[
+              styles.button,
+              (!name || !email || !password || !confirmPassword) && styles.buttonDisabled
+            ]}
             onPress={handleSignup}
-            disabled={loading}
+            disabled={loading || !name || !email || !password || !confirmPassword}
           >
             {loading ? (
               <ActivityIndicator color="#FFFFFF" />
@@ -211,7 +214,7 @@ const SignupScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#4f4e4e',
   },
   header: {
     flexDirection: 'row',
@@ -224,7 +227,7 @@ const styles = StyleSheet.create({
   },
   backButton: {
     fontSize: 24,
-    color: '#1A237E',
+    color: '#000000',
     fontWeight: '600',
   },
   headerTitle: {
@@ -241,7 +244,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     marginBottom: 8,
-    color: '#424242',
+    color: '#FFFFFF',
     fontWeight: '500',
   },
   input: {
@@ -255,11 +258,15 @@ const styles = StyleSheet.create({
     color: '#212121',
   },
   button: {
-    backgroundColor: '#1A237E',
+    backgroundColor: '#000000',
     borderRadius: 8,
     padding: 15,
     alignItems: 'center',
     marginTop: 10,
+  },
+  buttonDisabled: {
+    backgroundColor: '#757575',
+    opacity: 0.7,
   },
   buttonText: {
     color: '#FFFFFF',

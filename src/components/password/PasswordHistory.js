@@ -99,7 +99,7 @@ const PasswordHistory = ({ navigation, route }) => {
           <FontAwesome5
             name={visiblePasswords[index] ? "eye-slash" : "eye"}
             size={16}
-            color="#00ACC1"
+            color="#000000"
             style={styles.icon}
           />
         </TouchableOpacity>
@@ -107,7 +107,7 @@ const PasswordHistory = ({ navigation, route }) => {
           onPress={() => copyPasswordToClipboard(item)}
           style={styles.iconButton}
         >
-          <FontAwesome5 name="copy" size={16} color="#1A237E" style={styles.copyIcon} />
+          <FontAwesome5 name="copy" size={16} color="#000000" style={styles.copyIcon} />
         </TouchableOpacity>
       </View>
     </View>
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   },
   backButton: {
     fontSize: 24,
-    color: '#1A237E',
+    color: '#000000',
     fontWeight: '600',
   },
   headerTitle: {
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#1A237E',
+    color: '#000000',
     textAlign: 'center',
     marginBottom: 20,
     marginTop: 10,

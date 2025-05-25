@@ -144,7 +144,14 @@ const HomeScreen = ({ navigation }) => {
       setNewItemName('');
       setNewItemPassword('');
       fetchItems();
-      Alert.alert('Sucesso', 'Senha salva com sucesso!');
+      Alert.alert('Sucesso', 'Senha salva com sucesso!', [
+        {
+          text: 'OK',
+          onPress: () => {
+            navigation.navigate('SavedPasswords');
+          }
+        }
+      ]);
     } catch (error) {
       Alert.alert(
         'Erro',
@@ -314,7 +321,7 @@ const HomeScreen = ({ navigation }) => {
                 </Text>
               </View>
             ) : (
-              <FontAwesome5 name="user" size={20} color="#1A237E" />
+              <FontAwesome5 name="user" size={20} color="#000000" />
             )}
           </TouchableOpacity>
 
@@ -363,7 +370,7 @@ const HomeScreen = ({ navigation }) => {
         // Tela de senhas salvas
         loading && !refreshing ? (
           <View style={styles.loadingContainer}>
-            <ActivityIndicator size="large" color="#1A237E" />
+            <ActivityIndicator size="large" color="#000000" />
             <Text style={styles.loadingText}>Carregando senhas...</Text>
           </View>
         ) : (
@@ -409,7 +416,7 @@ const HomeScreen = ({ navigation }) => {
           {/* Ícone de cadeado */}
           <View style={styles.imageContainer}>
             <View style={styles.iconCircle}>
-              <FontAwesome5 name="lock" size={60} color="#1A237E" />
+              <FontAwesome5 name="lock" size={60} color="#000000" />
             </View>
           </View>
 
@@ -436,8 +443,12 @@ const HomeScreen = ({ navigation }) => {
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.button}
+            style={[
+              styles.button,
+              !password && styles.buttonDisabled
+            ]}
             onPress={handleSave}
+            disabled={!password}
           >
             <Text style={styles.buttonText}>SALVAR</Text>
           </TouchableOpacity>
@@ -511,7 +522,7 @@ const HomeScreen = ({ navigation }) => {
                   <FontAwesome5
                     name={passwordVisible ? "eye-slash" : "eye"}
                     size={18}
-                    color="#00ACC1"
+                    color="#000000"
                   />
                 </TouchableOpacity>
               </View>
@@ -541,7 +552,7 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#4f4e4e',
   },
   header: {
     flexDirection: 'row',
@@ -551,6 +562,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     borderBottomWidth: 1,
     borderBottomColor: '#BDBDBD',
+    backgroundColor: '#FFFFFF',
   },
   headerTitle: {
     fontSize: 18,
@@ -599,7 +611,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#1A237E',
+    color: '#FFFFFF',
     textAlign: 'center',
     marginBottom: 30,
     marginTop: 10,
@@ -618,7 +630,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   button: {
-    backgroundColor: '#1A237E',
+    backgroundColor: '#000000',
     borderRadius: 8,
     paddingVertical: 14,
     alignItems: 'center',
@@ -632,7 +644,7 @@ const styles = StyleSheet.create({
   },
   navLinksContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     width: '100%',
     marginTop: 20,
   },
@@ -641,7 +653,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
   },
   navLinkText: {
-    color: '#00ACC1',
+    color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '500',
   },
@@ -651,11 +663,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#4f4e4e',
   },
   loadingText: {
     fontSize: 16,
-    color: '#424242',
+    color: '#FFFFFF',
     marginTop: 10,
   },
   listContent: {
@@ -738,7 +750,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   backToGeneratorText: {
-    color: '#1A237E',
+    color: '#000000',
     fontSize: 16,
     fontWeight: '600',
   },
@@ -819,7 +831,7 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
   },
   saveButton: {
-    backgroundColor: '#00ACC1',
+    backgroundColor: '#000000',
     borderRadius: 8,
     padding: 15,
     alignItems: 'center',
@@ -833,7 +845,7 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    backgroundColor: '#1A237E',
+    backgroundColor: '#000000',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -841,6 +853,10 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  buttonDisabled: {
+    backgroundColor: '#757575',
+    opacity: 0.7,
   },
 });
 

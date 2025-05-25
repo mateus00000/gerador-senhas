@@ -141,9 +141,12 @@ const SignInScreen = ({ navigation }) => {
       />
       
       <TouchableOpacity
-        style={styles.button}
+        style={[
+          styles.button,
+          (!email || !password) && styles.buttonDisabled
+        ]}
         onPress={handleSignIn}
-        disabled={loading}
+        disabled={loading || !email || !password}
       >
         {loading ? (
           <ActivityIndicator color="#FFFFFF" />
@@ -168,14 +171,14 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     justifyContent: 'center',
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#4f4e4e',
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 30,
     textAlign: 'center',
-    color: '#1A237E',
+    color: '#FFFFFF',
   },
   input: {
     height: 50,
@@ -189,12 +192,16 @@ const styles = StyleSheet.create({
     color: '#212121',
   },
   button: {
-    backgroundColor: '#1A237E',
+    backgroundColor: '#000000',
     height: 50,
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 10,
+  },
+  buttonDisabled: {
+    backgroundColor: '#757575',
+    opacity: 0.7,
   },
   buttonText: {
     color: '#FFFFFF',
@@ -206,7 +213,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   linkText: {
-    color: '#00ACC1',
+    color: '#FFFFFF',
     fontSize: 15,
   },
   testApiButton: {
