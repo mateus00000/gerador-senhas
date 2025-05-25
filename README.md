@@ -55,7 +55,7 @@ Siga estas etapas para configurar o ambiente de desenvolvimento do frontend:
     ```bash
     npm install
     ```
-    (Se houver um diretório `backend`, navegue até ele e instale as dependências do backend também, conforme instruções no `backend/README.md`)
+    (No diretório `backend`, navegue até ele e instale as dependências do backend também, conforme instruções no `backend/README.md`)
 
 ## Executando o Aplicativo (Frontend)
 
