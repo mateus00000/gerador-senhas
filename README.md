@@ -45,13 +45,7 @@ Para executar este projeto (frontend), você precisará ter instalado em sua má
 
 Siga estas etapas para configurar o ambiente de desenvolvimento do frontend:
 
-1.  **Clone o repositório:**
-    ```bash
-    git clone https://github.com/marcusmix/gerador-senha.git # Substitua pela URL do seu repositório
-    cd gerador-senha # Navegue para a raiz do projeto clonado
-    ```
-
-2.  **Instale as dependências do frontend:**
+1.  **Instale as dependências do frontend:**
     ```bash
     npm install
     ```
